@@ -1,10 +1,8 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
-import remarkGfm from 'remark-gfm';
 
 export const Essay = defineDocumentType(() => ({
   name: 'Essay',
   filePathPattern: `**/*.md`,
-  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     date: { type: 'date', required: true },
@@ -24,8 +22,4 @@ export const Essay = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'blog',
   documentTypes: [Essay],
-  mdx: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [],
-  },
 });

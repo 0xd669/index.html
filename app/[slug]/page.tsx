@@ -1,6 +1,5 @@
 import { allEssays } from 'contentlayer/generated';
 import { format, parseISO } from 'date-fns';
-import { useMDXComponent } from 'next-contentlayer/hooks';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
@@ -22,8 +21,6 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
   );
   if (!essay) notFound();
 
-  const MDXContent = useMDXComponent(essay.body.code);
-
   return (
     <article className="mx-auto max-w-xl py-8">
       <div className="mb-8 text-center">
@@ -33,7 +30,10 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
         <h1 className="text-3xl font-bold">{essay.title}</h1>
       </div>
       <Image src={essay.coverImageUrl} alt="." width={512} height={512} />
-      <MDXContent />
+      <div
+        className="[&>*:last-child]:mb-0 [&>*]:mb-3"
+        dangerouslySetInnerHTML={{ __html: essay.body.html }}
+      />
     </article>
   );
 }
