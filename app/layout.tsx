@@ -7,8 +7,8 @@ import './globals.css';
 export const runtime = 'edge';
 
 export const metadata: Metadata = {
-  title: '👋 | hwang.sh',
-  description: '🚧',
+  title: '👋',
+  description: '👋👋👋',
 };
 
 export default function RootLayout({
