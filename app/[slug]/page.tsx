@@ -1,6 +1,8 @@
 import { allEssays } from 'contentlayer/generated';
 import { format, parseISO } from 'date-fns';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 export const generateStaticParams = async () =>
   allEssays.map((essay) => ({ slug: essay._raw.flattenedPath }));
@@ -14,11 +16,13 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
   return { title: essay.title };
 };
 
-export default function PostLayout({ params }: { params: { slug: string } }) {
+export default function BlogPage({ params }: { params: { slug: string } }) {
   const essay = allEssays.find(
     (essay) => essay._raw.flattenedPath === params.slug,
   );
-  if (!essay) throw new Error(`Post not found for slug: ${params.slug}`);
+  if (!essay) notFound();
+
+  const MDXContent = useMDXComponent(essay.body.code);
 
   return (
     <article className="mx-auto max-w-xl py-8">
@@ -29,10 +33,7 @@ export default function PostLayout({ params }: { params: { slug: string } }) {
         <h1 className="text-3xl font-bold">{essay.title}</h1>
       </div>
       <Image src={essay.coverImageUrl} alt="." width={512} height={512} />
-      <div
-        className="[&>*:last-child]:mb-0 [&>*]:mb-3"
-        dangerouslySetInnerHTML={{ __html: essay.body.html }}
-      />
+      <MDXContent />
     </article>
   );
 }

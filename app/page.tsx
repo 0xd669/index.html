@@ -9,8 +9,8 @@ export default function Home() {
 
   return (
     <main className="flex flex-col gap-12 p-24">
-      {essays.map((essay, idx) => (
-        <div key={idx} className="mb-8">
+      {essays.map((essay) => (
+        <div key={essay._id} className="mb-8">
           <h2 className="mb-1 text-xl">
             <Link
               href={essay.url}
