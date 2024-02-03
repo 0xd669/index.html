@@ -1,4 +1,5 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import remarkGfm from 'remark-gfm';
 
 export const Essay = defineDocumentType(() => ({
   name: 'Essay',
@@ -22,4 +23,7 @@ export const Essay = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'blog',
   documentTypes: [Essay],
+  markdown: {
+    remarkPlugins: [remarkGfm],
+  },
 });
