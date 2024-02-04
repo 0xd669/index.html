@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 
 import './globals.css';
 import { Nav } from './nav';
+import { ThemeProvider } from './theme-provider';
 
 export const runtime = 'edge';
 
@@ -18,12 +19,14 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body className="flex flex-col-reverse overflow-y-scroll md:max-h-dvh md:flex-row md:overflow-hidden">
-        <Nav className="shrink-0 grow-0 basis-auto p-10 md:max-h-dvh md:overflow-y-scroll md:border-r md:border-r-accent" />
-        <main className="grow p-10 shadow-lg md:max-h-dvh md:overflow-y-scroll">
-          {children}
-        </main>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Nav className="z-0 shrink-0 grow-0 basis-auto p-10 md:max-h-dvh md:overflow-y-scroll md:border-r md:border-r-accent" />
+          <main className="z-10 grow p-10 shadow-lg dark:shadow-white md:max-h-dvh md:overflow-y-scroll">
+            {children}
+          </main>
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
