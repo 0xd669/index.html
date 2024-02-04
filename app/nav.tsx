@@ -1,8 +1,10 @@
 import { Essay, allEssays } from 'contentlayer/generated';
-import { compareDesc, format, parseISO } from 'date-fns';
+import { compareDesc } from 'date-fns';
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
+
+import { ThemeToggleButton } from './theme-provider';
 
 type EssaysByYear = { [year: number]: Essay[] };
 
@@ -18,7 +20,7 @@ export function Nav({ className }: { className?: string }) {
   }, {});
 
   return (
-    <aside className={cn(className)}>
+    <aside className={cn(className, 'relative')}>
       <header>
         <ul className="flex flex-row items-baseline gap-2.5">
           <li>
@@ -72,7 +74,7 @@ export function Nav({ className }: { className?: string }) {
           &copy; {new Date().getFullYear()}. 황성현. All rights reserved.
         </p>
       </header>
-      <nav className="mt-10">
+      <nav className="mb-8 mt-10">
         <ol className="flex flex-col gap-10">
           {Object.entries(essaysByYear)
             .sort((a, b) => Number(b[0]) - Number(a[0]))
@@ -95,6 +97,9 @@ export function Nav({ className }: { className?: string }) {
             ))}
         </ol>
       </nav>
+      <div className="absolute bottom-4 left-4 z-20 md:fixed">
+        <ThemeToggleButton />
+      </div>
     </aside>
   );
 }
