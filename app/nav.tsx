@@ -17,6 +17,9 @@ export function Nav({ className }: { className?: string }) {
       >
         황성현·黃晟鉉
       </Link>
+      <p className="mt-0.5 text-sm text-muted-foreground">
+        &copy; {new Date().getFullYear()}. 황성현. All rights reserved.
+      </p>
       <nav className="mt-10">
         <ol className="flex flex-col">
           {essays.map((essay) => (
