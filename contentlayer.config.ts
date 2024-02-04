@@ -23,6 +23,9 @@ export const Essay = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'blog',
   documentTypes: [Essay],
+  date: {
+    timezone: 'Asia/Seoul',
+  },
   markdown: {
     remarkPlugins: [remarkGfm],
   },

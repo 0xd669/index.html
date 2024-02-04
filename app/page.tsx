@@ -23,7 +23,7 @@ export default function Home() {
             dateTime={essay.date}
             className="mb-2 block text-xs text-gray-600"
           >
-            {format(parseISO(essay.date), 'LLLL d, yyyy')}
+            {format(parseISO(essay.date), 'yyyy.MM.dd')}
           </time>
         </div>
       ))}
