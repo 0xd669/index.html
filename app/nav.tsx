@@ -1,13 +1,21 @@
-import { allEssays } from 'contentlayer/generated';
+import { Essay, allEssays } from 'contentlayer/generated';
 import { compareDesc, format, parseISO } from 'date-fns';
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 
+type EssaysByYear = { [year: number]: Essay[] };
+
 export function Nav({ className }: { className?: string }) {
   const essays = allEssays.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date)),
   );
+
+  const essaysByYear = essays.reduce((acc: EssaysByYear, essay) => {
+    const year = new Date(essay.date).getFullYear();
+    acc[year] = [...(acc[year] || []), essay];
+    return acc;
+  }, {});
 
   return (
     <aside className={cn(className)}>
@@ -65,20 +73,26 @@ export function Nav({ className }: { className?: string }) {
         </p>
       </header>
       <nav className="mt-10">
-        <ol className="flex flex-col">
-          {essays.map((essay) => (
-            <li key={essay._id}>
-              <Link href={essay.url} className="font-medium text-primary">
-                {essay.title}
-              </Link>
-              <time
-                dateTime={essay.date}
-                className="mb-2 block text-xs text-gray-600"
-              >
-                {format(parseISO(essay.date), 'yyyy.MM.dd')}
-              </time>
-            </li>
-          ))}
+        <ol className="flex flex-col gap-10">
+          {Object.entries(essaysByYear)
+            .sort((a, b) => Number(b[0]) - Number(a[0]))
+            .map(([year, essays]) => (
+              <li key={year} className="flex flex-col gap-2.5">
+                <time className="font-semibold text-primary">{year}</time>
+                <ol className="flex flex-col gap-2">
+                  {essays.map((essay) => (
+                    <li key={essay._id}>
+                      <Link
+                        href={essay.url}
+                        className="font-medium text-primary underline underline-offset-4"
+                      >
+                        {essay.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ol>
+              </li>
+            ))}
         </ol>
       </nav>
     </aside>
