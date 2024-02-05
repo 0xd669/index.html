@@ -3,7 +3,9 @@ import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-import './article.css';
+import { cn } from '@/lib/utils';
+
+import styles from './styles.module.css';
 
 export const generateStaticParams = async () =>
   allEssays.map((essay) => ({ slug: essay._raw.flattenedPath }));
@@ -43,7 +45,7 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
         priority
       />
       <div
-        className="article [&>*:last-child]:mb-0 [&>*]:mb-3"
+        className={cn(styles.article, '[&>*:last-child]:mb-0 [&>*]:mb-3')}
         dangerouslySetInnerHTML={{ __html: essay.body.html }}
       />
     </article>
