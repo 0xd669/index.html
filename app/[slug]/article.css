@@ -2,10 +2,6 @@
   @apply text-base;
 }
 
-.article a {
-  @apply underline underline-offset-4;
-}
-
 .article [data-footnote-backref],
 .article [data-footnote-ref] {
   @apply no-underline;

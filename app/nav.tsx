@@ -46,7 +46,7 @@ export function Nav({ className }: { className?: string }) {
           <li>
             <Link
               href="/"
-              className="text-3xl font-medium tracking-tight text-primary"
+              className="text-3xl font-medium tracking-tight text-primary no-underline"
             >
               황성현·黃晟鉉
             </Link>
@@ -106,12 +106,9 @@ export function Nav({ className }: { className?: string }) {
                     <li key={essay._id}>
                       <Link
                         href={essay.url}
-                        className={cn(
-                          'font-medium text-primary underline underline-offset-4',
-                          {
-                            "after:content-['_↗']": isExternalEssay(essay),
-                          },
-                        )}
+                        className={cn('font-medium', {
+                          "after:content-['_↗']": isExternalEssay(essay),
+                        })}
                       >
                         {essay.title}
                       </Link>
