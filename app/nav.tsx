@@ -2,14 +2,34 @@ import { Essay, allEssays } from 'contentlayer/generated';
 import { compareDesc } from 'date-fns';
 import Link from 'next/link';
 
+import { isExternalEssay, makeExternalEssay } from '@/lib/essay';
 import { cn } from '@/lib/utils';
 
 import { ThemeToggleButton } from './theme-provider';
 
 type EssaysByYear = { [year: number]: Essay[] };
 
+const externalEssays: Essay[] = [
+  makeExternalEssay({
+    id: 'how-banksalald-decomposes-legacy-services',
+    title: '뱅크샐러드는 어떻게 레거시 서비스를 박살 내는가',
+    date: new Date('2020-09-21'),
+    url: 'https://blog.banksalad.com/tech/how-banksalald-decomposes-legacy-services/',
+    coverImageUrl:
+      'https://blog.banksalad.com/static/ddf7d50a5ad39df071d944374fc94a1e/3b654/cover.webp',
+  }),
+  makeExternalEssay({
+    id: 'pycon-2019',
+    title: 'PyCon KR 2019 뱅크샐러드 돌아보기',
+    date: new Date('2019-08-26'),
+    url: 'https://blog.banksalad.com/tech/pycon19/',
+    coverImageUrl:
+      'https://blog.banksalad.com/static/e9c1e127c9ae40974349fa081c26bb21/b10c3/cover.webp',
+  }),
+];
+
 export function Nav({ className }: { className?: string }) {
-  const essays = allEssays.sort((a, b) =>
+  const essays = [...allEssays, ...externalEssays].sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date)),
   );
 
@@ -86,7 +106,12 @@ export function Nav({ className }: { className?: string }) {
                     <li key={essay._id}>
                       <Link
                         href={essay.url}
-                        className="font-medium text-primary underline underline-offset-4"
+                        className={cn(
+                          'font-medium text-primary underline underline-offset-4',
+                          {
+                            "after:content-['_↗']": isExternalEssay(essay),
+                          },
+                        )}
                       >
                         {essay.title}
                       </Link>
