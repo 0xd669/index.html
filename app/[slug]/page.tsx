@@ -3,6 +3,8 @@ import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
+import './article.css';
+
 export const generateStaticParams = async () =>
   allEssays.map((essay) => ({ slug: essay._raw.flattenedPath }));
 
@@ -22,16 +24,26 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
   if (!essay) notFound();
 
   return (
-    <article className="mx-auto max-w-xl py-8">
-      <div className="mb-8 text-center">
-        <time dateTime={essay.date} className="mb-1 text-xs text-gray-600">
-          {format(parseISO(essay.date), 'LLLL d, yyyy')}
+    <article className="mx-auto flex max-w-2xl flex-col items-center gap-8">
+      <header className="text-center">
+        <time
+          dateTime={essay.date}
+          className="mb-2.5 text-xs text-muted-foreground"
+        >
+          {format(parseISO(essay.date), 'yyyy.MM.dd')}
         </time>
         <h1 className="text-3xl font-bold">{essay.title}</h1>
-      </div>
-      <Image src={essay.coverImageUrl} alt="." width={512} height={512} />
+      </header>
+      <Image
+        src={essay.coverImageUrl}
+        alt={essay.title}
+        width={512}
+        height={512}
+        sizes="(max-width: 512px) 100vw, 512px"
+        priority
+      />
       <div
-        className="[&>*:last-child]:mb-0 [&>*]:mb-3"
+        className="article [&>*:last-child]:mb-0 [&>*]:mb-3"
         dangerouslySetInnerHTML={{ __html: essay.body.html }}
       />
     </article>
