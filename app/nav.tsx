@@ -1,7 +1,7 @@
-import { Essay, allEssays } from 'contentlayer/generated';
-import { compareDesc } from 'date-fns';
+import { Essay } from 'contentlayer/generated';
 import Link from 'next/link';
 
+import { allEssays } from '@/lib/essay';
 import { cn } from '@/lib/utils';
 
 import { ThemeToggleButton } from './theme-provider';
@@ -9,11 +9,7 @@ import { ThemeToggleButton } from './theme-provider';
 type EssaysByYear = { [year: number]: Essay[] };
 
 export function Nav({ className }: { className?: string }) {
-  const essays = allEssays.sort((a, b) =>
-    compareDesc(new Date(a.date), new Date(b.date)),
-  );
-
-  const essaysByYear = essays.reduce((acc: EssaysByYear, essay) => {
+  const essaysByYear = allEssays.reduce((acc: EssaysByYear, essay) => {
     const year = new Date(essay.date).getFullYear();
     acc[year] = [...(acc[year] || []), essay];
     return acc;
@@ -26,7 +22,7 @@ export function Nav({ className }: { className?: string }) {
           <li>
             <Link
               href="/"
-              className="text-3xl font-medium tracking-tight text-primary"
+              className="text-3xl font-medium tracking-tight text-primary no-underline"
             >
               황성현·黃晟鉉
             </Link>
@@ -84,10 +80,7 @@ export function Nav({ className }: { className?: string }) {
                 <ol className="flex flex-col gap-2">
                   {essays.map((essay) => (
                     <li key={essay._id}>
-                      <Link
-                        href={essay.url}
-                        className="font-medium text-primary underline underline-offset-4"
-                      >
+                      <Link href={essay.url} className="font-medium">
                         {essay.title}
                       </Link>
                     </li>
