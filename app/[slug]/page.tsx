@@ -47,6 +47,15 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
       publishedTime: essay.date,
       authors: ['황성현'],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: essay.title,
+      description,
+      siteId: '1723298788872499200',
+      creator: '@hwangbyhwang',
+      creatorId: '1723298788872499200',
+      images: [`https://hwang.sh${essay.coverImageUrl}`],
+    },
   };
 };
 
