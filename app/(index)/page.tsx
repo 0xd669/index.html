@@ -58,6 +58,7 @@ export default function Home() {
                   src={essay.coverImageUrl}
                   alt={essay.title}
                   className="object-cover"
+                  sizes="512px"
                   priority
                   fill
                 />
