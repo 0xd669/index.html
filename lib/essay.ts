@@ -47,8 +47,7 @@ const externalEssays: Essay[] = [
     title: '뱅크샐러드는 어떻게 레거시 서비스를 박살 내는가',
     date: new Date('2020-09-21'),
     url: 'https://blog.banksalad.com/tech/how-banksalald-decomposes-legacy-services/',
-    coverImageUrl:
-      'https://blog.banksalad.com/static/ddf7d50a5ad39df071d944374fc94a1e/3b654/cover.webp',
+    coverImageUrl: '/covers/2020-banksalad-decomp.png',
   }),
   makeExternalEssay({
     id: 'pycon-2019',
