@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
@@ -28,6 +29,7 @@ export default function RootLayout({
           </main>
         </ThemeProvider>
         <Analytics />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!} />
       </body>
     </html>
   );
