@@ -18,15 +18,14 @@ export function Nav({ className }: { className?: string }) {
   return (
     <aside className={cn(className, 'relative')}>
       <header>
-        <ul className="flex flex-row items-baseline gap-2">
-          <li>
-            <Link
-              href="/"
-              className="text-2xl font-medium tracking-tight text-primary no-underline md:text-3xl"
-            >
-              황성현·黃晟鉉
-            </Link>
-          </li>
+        <Link
+          href="/"
+          className="text-2xl text-primary no-underline md:text-3xl"
+        >
+          <span className="font-semibold tracking-tight">황성현</span>·
+          <span>黃晟鉉</span>
+        </Link>
+        <ul className="mt-4 flex flex-row items-center gap-2">
           <li>
             <a href="/rss.xml">
               <svg
@@ -42,6 +41,22 @@ export function Nav({ className }: { className?: string }) {
                 />
               </svg>
             </a>
+          </li>
+          <li>
+            <Link href="mailto:hwang@hey.com">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 fill-none stroke-primary"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2 7L10.1649 12.7154C10.8261 13.1783 11.1567 13.4097 11.5163 13.4993C11.8339 13.5785 12.1661 13.5785 12.4837 13.4993C12.8433 13.4097 13.1739 13.1783 13.8351 12.7154L22 7M6.8 20H17.2C18.8802 20 19.7202 20 20.362 19.673C20.9265 19.3854 21.3854 18.9265 21.673 18.362C22 17.7202 22 16.8802 22 15.2V8.8C22 7.11984 22 6.27976 21.673 5.63803C21.3854 5.07354 20.9265 4.6146 20.362 4.32698C19.7202 4 18.8802 4 17.2 4H6.8C5.11984 4 4.27976 4 3.63803 4.32698C3.07354 4.6146 2.6146 5.07354 2.32698 5.63803C2 6.27976 2 7.11984 2 8.8V15.2C2 16.8802 2 17.7202 2.32698 18.362C2.6146 18.9265 3.07354 19.3854 3.63803 19.673C4.27976 20 5.11984 20 6.8 20Z"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
           </li>
           <li>
             <Link href="https://x.com/hwangbyhwang">
@@ -79,21 +94,18 @@ export function Nav({ className }: { className?: string }) {
             </Link>
           </li>
         </ul>
-        <Link href="mailto:hwang@hey.com" className="hidden text-sm md:block">
-          hwang@hey.com
-        </Link>
-        <p className="mt-0.5 text-sm text-muted-foreground">
+        <p className="mt-6 text-sm opacity-30">
           &copy; {new Date().getFullYear()}. 황성현. All rights reserved.
         </p>
       </header>
-      <nav className="mb-8 mt-10 hidden md:block">
-        <ol className="flex flex-col gap-10">
+      <nav className="mb-8 mt-12 hidden md:block">
+        <ol className="flex flex-col gap-7">
           {Object.entries(essaysByYear)
             .sort((a, b) => Number(b[0]) - Number(a[0]))
             .map(([year, essays]) => (
-              <li key={year} className="flex flex-col gap-2.5">
+              <li key={year} className="flex flex-col gap-1.5 opacity-80">
                 <time className="font-semibold text-primary">{year}</time>
-                <ol className="flex flex-col gap-2">
+                <ol className="flex flex-col gap-1.5">
                   {essays.map((essay) => (
                     <li key={essay._id}>
                       <Link href={essay.url} className="font-medium">
