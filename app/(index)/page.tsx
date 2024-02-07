@@ -1,7 +1,13 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { allEssays } from '@/lib/essay';
+
+export const metadata: Metadata = {
+  title: '👋',
+  description: '안녕하세요, 글 쓰는 황성현입니다.',
+};
 
 export default function Home() {
   return (

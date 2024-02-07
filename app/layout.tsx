@@ -1,6 +1,5 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
-import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
 import './globals.css';
@@ -8,11 +7,6 @@ import { Nav } from './nav';
 import { ThemeProvider } from './theme-provider';
 
 export const runtime = 'edge';
-
-export const metadata: Metadata = {
-  title: '👋',
-  description: '👋👋👋',
-};
 
 export default function RootLayout({
   children,
