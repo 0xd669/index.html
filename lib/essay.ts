@@ -1,4 +1,5 @@
-import { Essay } from 'contentlayer/generated';
+import { Essay, allEssays as internalEssays } from 'contentlayer/generated';
+import { compareDesc } from 'date-fns';
 
 interface makeExternalEssayProps {
   id: string;
@@ -8,11 +9,11 @@ interface makeExternalEssayProps {
   coverImageUrl: string;
 }
 
-export function isExternalEssay(essay: Essay): boolean {
+function isExternalEssay(essay: Essay): boolean {
   return essay._raw.sourceFilePath === '';
 }
 
-export function makeExternalEssay({
+function makeExternalEssay({
   id,
   title,
   date,
@@ -39,3 +40,26 @@ export function makeExternalEssay({
     },
   };
 }
+
+const externalEssays: Essay[] = [
+  makeExternalEssay({
+    id: 'how-banksalald-decomposes-legacy-services',
+    title: '뱅크샐러드는 어떻게 레거시 서비스를 박살 내는가',
+    date: new Date('2020-09-21'),
+    url: 'https://blog.banksalad.com/tech/how-banksalald-decomposes-legacy-services/',
+    coverImageUrl:
+      'https://blog.banksalad.com/static/ddf7d50a5ad39df071d944374fc94a1e/3b654/cover.webp',
+  }),
+  makeExternalEssay({
+    id: 'pycon-2019',
+    title: 'PyCon KR 2019 뱅크샐러드 돌아보기',
+    date: new Date('2019-08-26'),
+    url: 'https://blog.banksalad.com/tech/pycon19/',
+    coverImageUrl:
+      'https://blog.banksalad.com/static/d01bc42bbcf59b5ba2e268f05cb088e9/4c573/first_day_stage3.png',
+  }),
+];
+
+export const allEssays = [...internalEssays, ...externalEssays].sort((a, b) =>
+  compareDesc(new Date(a.date), new Date(b.date)),
+);
