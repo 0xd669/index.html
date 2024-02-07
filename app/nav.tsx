@@ -28,7 +28,7 @@ export function Nav({ className }: { className?: string }) {
             </Link>
           </li>
           <li>
-            <Link href="/rss.xml">
+            <a href="/rss.xml">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4 fill-none stroke-primary"
@@ -41,7 +41,7 @@ export function Nav({ className }: { className?: string }) {
                   strokeLinejoin="round"
                 />
               </svg>
-            </Link>
+            </a>
           </li>
           <li>
             <Link href="https://x.com/hwangbyhwang">
