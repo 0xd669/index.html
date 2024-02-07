@@ -22,7 +22,7 @@ export function Nav({ className }: { className?: string }) {
           <li>
             <Link
               href="/"
-              className="text-3xl font-medium tracking-tight text-primary no-underline"
+              className="text-2xl font-medium tracking-tight text-primary no-underline md:text-3xl"
             >
               황성현·黃晟鉉
             </Link>
@@ -63,14 +63,14 @@ export function Nav({ className }: { className?: string }) {
             </Link>
           </li>
         </ul>
-        <Link href="mailto:hwang@hey.com" className="text-sm">
+        <Link href="mailto:hwang@hey.com" className="hidden text-sm md:block">
           hwang@hey.com
         </Link>
         <p className="mt-0.5 text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()}. 황성현. All rights reserved.
         </p>
       </header>
-      <nav className="mb-8 mt-10">
+      <nav className="mb-8 mt-10 hidden md:block">
         <ol className="flex flex-col gap-10">
           {Object.entries(essaysByYear)
             .sort((a, b) => Number(b[0]) - Number(a[0]))
@@ -90,7 +90,7 @@ export function Nav({ className }: { className?: string }) {
             ))}
         </ol>
       </nav>
-      <div className="absolute bottom-4 left-4 z-20 md:fixed">
+      <div className="absolute bottom-[calc(50%-18px)] right-4 z-20 md:fixed md:bottom-4 md:left-4">
         <ThemeToggleButton />
       </div>
     </aside>

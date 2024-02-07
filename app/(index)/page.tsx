@@ -6,7 +6,7 @@ import { allEssays } from '@/lib/essay';
 export default function Home() {
   return (
     <div className="mx-auto max-w-6xl p-0 sm:p-4 md:p-8">
-      <article className="space-y-8 text-2xl">
+      <article className="space-y-8 text-lg sm:text-xl xl:text-2xl">
         <p>
           안녕하세요, 황성현입니다. 반갑습니다.{' '}
           {animatedEmoji('1f636_200d_1f32b_fe0f', '😶‍🌫️')} 저는{' '}
