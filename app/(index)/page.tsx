@@ -1,19 +1,25 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { allEssays } from '@/lib/essay';
 
+export const metadata: Metadata = {
+  title: '👋',
+  description: '안녕하세요, 글 쓰는 황성현입니다.',
+};
+
 export default function Home() {
   return (
     <div className="mx-auto max-w-6xl p-0 sm:p-4 md:p-8">
-      <article className="space-y-8 text-2xl">
+      <article className="space-y-8 text-lg sm:text-xl xl:text-2xl">
         <p>
           안녕하세요, 황성현입니다. 반갑습니다.{' '}
           {animatedEmoji('1f636_200d_1f32b_fe0f', '😶‍🌫️')} 저는{' '}
           <Link href="https://corp.banksalad.com/">뱅크샐러드</Link>의
-          공동창업자이며 초기에 CTO로 일했습니다. 이전에는{' '}
-          <Link href="https://orderplus.kr/teamxbarx">스타트업 하나</Link>를
-          공동창업해 1인 개발자로 일했습니다. 서버, 웹, 모바일을 가리지 않고
+          공동창업자이며 초기에 CTO로 일했습니다. 이전에도{' '}
+          <Link href="https://orderplus.kr/teamxbarx">스타트업</Link>의
+          공동창업자이자 1인 개발자로 일했습니다. 서버, 웹, 모바일을 가리지 않고
           무언가를 만들 수 있는 풀스택 개발을 선호합니다. 현재는 잠시 일을 쉬며
           앞으로 무엇을 하며 살아갈지 고민하고 있습니다.
         </p>

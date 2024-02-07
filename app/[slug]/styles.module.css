@@ -1,5 +1,5 @@
 .article {
-  @apply text-base;
+  @apply text-base lg:text-lg xl:text-xl;
 }
 
 .article a[data-footnote-backref] {

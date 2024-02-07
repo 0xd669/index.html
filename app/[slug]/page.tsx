@@ -27,21 +27,21 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
 
   return (
     <article className="mx-auto flex max-w-2xl flex-col items-center gap-8">
-      <header className="text-center">
+      <header className="space-y-2.5 text-center">
         <time
           dateTime={essay.date}
-          className="mb-2.5 text-xs text-muted-foreground"
+          className="text-sm text-muted-foreground xl:text-base"
         >
           {format(parseISO(essay.date), 'yyyy.MM.dd')}
         </time>
-        <h1 className="text-3xl font-bold">{essay.title}</h1>
+        <h1 className="text-3xl font-bold xl:text-4xl">{essay.title}</h1>
       </header>
       <Image
         src={essay.coverImageUrl}
         alt={essay.title}
-        width={512}
-        height={512}
-        sizes="(max-width: 512px) 100vw, 512px"
+        width={672}
+        height={672}
+        sizes="(max-width: 672px) 100vw, 672px"
         priority
       />
       <div
