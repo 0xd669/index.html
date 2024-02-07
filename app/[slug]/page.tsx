@@ -16,14 +16,37 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
   );
   if (!essay) throw new Error(`Essay not found for slug: ${params.slug}`);
 
+  const description =
+    essay.body.raw
+      .replaceAll(/[^ㄱ-힣\s\w-._!*"']+/g, '')
+      .replaceAll('\n', ' ')
+      .slice(0, 160)
+      .trim() + '...';
+
   return {
     title: essay.title,
-    description:
-      essay.body.raw
-        .replaceAll(/[^ㄱ-힣\s\w-._!*"']+/g, '')
-        .replaceAll('\n', ' ')
-        .slice(0, 160)
-        .trim() + '...',
+    description,
+    metadataBase: new URL('https://hwang.sh'),
+    alternates: {
+      canonical: `/${essay._raw.flattenedPath}`,
+    },
+    openGraph: {
+      title: essay.title,
+      description,
+      url: `https://hwang.sh/${essay._raw.flattenedPath}`,
+      site_name: 'hwang.sh',
+      images: [
+        {
+          url: `https://hwang.sh${essay.coverImageUrl}`,
+          width: 512,
+          height: 512,
+        },
+      ],
+      locale: 'ko_KR',
+      type: 'article',
+      publishedTime: essay.date,
+      authors: ['황성현'],
+    },
   };
 };
 
