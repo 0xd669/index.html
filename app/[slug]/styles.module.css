@@ -1,5 +1,5 @@
 .article {
-  @apply text-base lg:text-lg xl:text-xl;
+  @apply text-base leading-[1.7] xl:text-lg;
 }
 
 .article a[data-footnote-backref] {
@@ -7,7 +7,7 @@
 }
 
 .article a[data-footnote-ref] {
-  @apply no-underline;
+  @apply font-semibold text-[#F04438] no-underline;
 }
 
 .article section[data-footnotes] {
@@ -16,4 +16,8 @@
 
 .article section[data-footnotes] ol {
   @apply list-decimal;
+}
+
+.article section[data-footnotes] ol li::marker {
+  @apply font-medium text-[#F04438];
 }

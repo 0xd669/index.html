@@ -60,14 +60,14 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
 
   return (
     <article className="mx-auto flex max-w-2xl flex-col items-center gap-8">
-      <header className="space-y-2.5 text-center">
+      <header className="space-y-1 text-center">
         <time
           dateTime={essay.date}
-          className="text-sm text-muted-foreground xl:text-base"
+          className="text-sm font-semibold text-muted-foreground opacity-90"
         >
           {format(parseISO(essay.date), 'yyyy.MM.dd')}
         </time>
-        <h1 className="text-3xl font-bold xl:text-4xl">{essay.title}</h1>
+        <h1 className="text-3xl font-bold">{essay.title}</h1>
       </header>
       <Image
         src={essay.coverImageUrl}
@@ -75,6 +75,7 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
         width={672}
         height={672}
         sizes="(max-width: 672px) 100vw, 672px"
+        className="rounded-[2rem]"
         priority
       />
       <div
