@@ -16,7 +16,15 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
   );
   if (!essay) throw new Error(`Essay not found for slug: ${params.slug}`);
 
-  return { title: essay.title };
+  return {
+    title: essay.title,
+    description:
+      essay.body.raw
+        .replaceAll(/[^ㄱ-힣\s\w-._!*"']+/g, '')
+        .replaceAll('\n', ' ')
+        .slice(0, 160)
+        .trim() + '...',
+  };
 };
 
 export default function BlogPage({ params }: { params: { slug: string } }) {
