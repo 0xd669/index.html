@@ -31,6 +31,7 @@ function makeExternalEssay({
       raw: '',
       html: '',
     },
+    description: '',
     _raw: {
       sourceFilePath: '',
       sourceFileName: '',
