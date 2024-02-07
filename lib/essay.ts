@@ -59,6 +59,10 @@ const externalEssays: Essay[] = [
   }),
 ];
 
+export const allInternalEssays = internalEssays.sort((a, b) =>
+  compareDesc(new Date(a.date), new Date(b.date)),
+);
+
 export const allEssays = [...internalEssays, ...externalEssays].sort((a, b) =>
   compareDesc(new Date(a.date), new Date(b.date)),
 );

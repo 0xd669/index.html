@@ -28,12 +28,12 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
     description,
     metadataBase: new URL('https://hwang.sh'),
     alternates: {
-      canonical: `/${essay._raw.flattenedPath}`,
+      canonical: essay.url,
     },
     openGraph: {
       title: essay.title,
       description,
-      url: `https://hwang.sh/${essay._raw.flattenedPath}`,
+      url: `https://hwang.sh${essay.url}`,
       site_name: 'hwang.sh',
       images: [
         {
