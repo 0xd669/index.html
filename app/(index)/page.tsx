@@ -6,14 +6,14 @@ import { allEssays } from '@/lib/essay';
 
 export const metadata: Metadata = {
   title: '👋',
-  description: '안녕하세요, 황성현입니다. 반갑습니다.',
+  description: '안녕하세요, 글 쓰는 황성현입니다. 반갑습니다.',
   metadataBase: new URL('https://hwang.sh'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'hwang.sh',
-    description: '안녕하세요, 황성현입니다. 반갑습니다.',
+    description: '안녕하세요, 글 쓰는 황성현입니다. 반갑습니다.',
     url: 'https://hwang.sh',
     locale: 'ko_KR',
     type: 'profile',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'hwang.sh',
-    description: '안녕하세요, 황성현입니다. 반갑습니다.',
+    description: '안녕하세요, 글 쓰는 황성현입니다. 반갑습니다.',
     siteId: '1723298788872499200',
     creator: '@hwangbyhwang',
     creatorId: '1723298788872499200',
