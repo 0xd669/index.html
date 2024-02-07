@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { allEssays } from '@/lib/essay';
-import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: '👋',
