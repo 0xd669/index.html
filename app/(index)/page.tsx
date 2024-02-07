@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     lastName: '황',
     username: 'sunghyunhwang',
     gender: 'male',
+    images: [
+      {
+        url: `https://hwang.sh/og.png`,
+        width: 1536,
+        height: 768,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -29,6 +36,7 @@ export const metadata: Metadata = {
     siteId: '1723298788872499200',
     creator: '@hwangbyhwang',
     creatorId: '1723298788872499200',
+    images: [`https://hwang.sh/og.png`],
   },
 };
 
