@@ -16,23 +16,16 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
   );
   if (!essay) throw new Error(`Essay not found for slug: ${params.slug}`);
 
-  const description =
-    essay.body.raw
-      .replaceAll(/[^ㄱ-힣\s\w-._!*"']+/g, '')
-      .replaceAll('\n', ' ')
-      .slice(0, 160)
-      .trim() + '...';
-
   return {
     title: essay.title,
-    description,
+    description: essay.description,
     metadataBase: new URL('https://hwang.sh'),
     alternates: {
       canonical: essay.url,
     },
     openGraph: {
       title: essay.title,
-      description,
+      description: essay.description,
       url: `https://hwang.sh${essay.url}`,
       site_name: 'hwang.sh',
       images: [
@@ -50,7 +43,7 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
     twitter: {
       card: 'summary_large_image',
       title: essay.title,
-      description,
+      description: essay.description,
       siteId: '1723298788872499200',
       creator: '@hwangbyhwang',
       creatorId: '1723298788872499200',
