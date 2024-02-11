@@ -6,12 +6,6 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'blog.banksalad.com',
-        port: '',
-        pathname: '/static/**',
-      },
-      {
-        protocol: 'https',
         hostname: 'fonts.gstatic.com',
         port: '',
         pathname: '/s/e/notoemoji/latest/**',
