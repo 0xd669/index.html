@@ -25,7 +25,7 @@ export function Nav({ className }: { className?: string }) {
           <span className="font-semibold tracking-tight">황성현</span>·
           <span>黃晟鉉</span>
         </Link>
-        <ul className="mt-4 flex flex-row items-center gap-2">
+        <ul className="mt-4 flex flex-row items-center gap-4">
           <li>
             <a href="/rss.xml" aria-label="RSS 구독 주소">
               <svg
