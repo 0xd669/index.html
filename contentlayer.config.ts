@@ -15,7 +15,7 @@ export const Essay = defineDocumentType(() => ({
     },
     coverImageUrl: {
       type: 'string',
-      resolve: (essay) => `/covers/${essay._raw.flattenedPath}.png`,
+      resolve: (essay) => `/covers/${essay._raw.flattenedPath}.webp`,
     },
     description: {
       type: 'string',

@@ -1,15 +1,10 @@
+import BundleAnalyzerPlugin from '@next/bundle-analyzer';
 import { withContentlayer } from 'next-contentlayer';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'blog.banksalad.com',
-        port: '',
-        pathname: '/static/**',
-      },
       {
         protocol: 'https',
         hostname: 'fonts.gstatic.com',
@@ -20,4 +15,8 @@ const nextConfig = {
   },
 };
 
-export default withContentlayer(nextConfig);
+const withBundleAnalyzer = BundleAnalyzerPlugin({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+export default withBundleAnalyzer(withContentlayer(nextConfig));
