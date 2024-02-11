@@ -27,7 +27,7 @@ export function Nav({ className }: { className?: string }) {
         </Link>
         <ul className="mt-4 flex flex-row items-center gap-2">
           <li>
-            <a href="/rss.xml">
+            <a href="/rss.xml" aria-label="RSS 구독 주소">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4 fill-none stroke-primary"
@@ -43,7 +43,7 @@ export function Nav({ className }: { className?: string }) {
             </a>
           </li>
           <li>
-            <Link href="mailto:hwang@hey.com">
+            <Link href="mailto:hwang@hey.com" aria-label="이메일 주소">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4 fill-none stroke-primary"
@@ -59,7 +59,7 @@ export function Nav({ className }: { className?: string }) {
             </Link>
           </li>
           <li>
-            <Link href="https://x.com/hwangbyhwang">
+            <Link href="https://x.com/hwangbyhwang" aria-label="X 주소">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-3.5 w-3.5 fill-primary"
@@ -70,7 +70,10 @@ export function Nav({ className }: { className?: string }) {
             </Link>
           </li>
           <li>
-            <Link href="https://github.com/sunghyunzz/index.html">
+            <Link
+              href="https://github.com/sunghyunzz/index.html"
+              aria-label="GitHub 주소"
+            >
               <svg
                 viewBox="0 0 256 250"
                 className="h-4 w-4 fill-primary"
@@ -82,7 +85,10 @@ export function Nav({ className }: { className?: string }) {
             </Link>
           </li>
           <li>
-            <Link href="https://www.linkedin.com/in/sunghyunzz/">
+            <Link
+              href="https://www.linkedin.com/in/sunghyunzz/"
+              aria-label="LinkedIn 주소"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4 fill-primary"
