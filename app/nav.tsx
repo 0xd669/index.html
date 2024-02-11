@@ -70,7 +70,7 @@ export function Nav({ className }: { className?: string }) {
             </Link>
           </li>
           <li>
-            <Link href="https://github.com/sunghyunzz">
+            <Link href="https://github.com/sunghyunzz/index.html">
               <svg
                 viewBox="0 0 256 250"
                 className="h-4 w-4 fill-primary"
