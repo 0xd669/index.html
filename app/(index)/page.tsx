@@ -88,6 +88,7 @@ export default function Home() {
               <Link
                 href={essay.url}
                 className="text-[0] font-medium hover:text-base"
+                aria-label={`${essay.title} 글 읽기`}
               >
                 <Image
                   src={essay.coverImageUrl}
