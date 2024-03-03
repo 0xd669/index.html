@@ -50,13 +50,6 @@ const externalEssays: Essay[] = [
     url: 'https://blog.banksalad.com/tech/how-banksalald-decomposes-legacy-services/',
     coverImageUrl: '/covers/2020-banksalad-decomp.webp',
   }),
-  makeExternalEssay({
-    id: 'pycon-2019',
-    title: 'PyCon KR 2019 뱅크샐러드 돌아보기',
-    date: new Date('2019-08-26'),
-    url: 'https://blog.banksalad.com/tech/pycon19/',
-    coverImageUrl: '/covers/2019-banksalad-pycon.webp',
-  }),
 ];
 
 export const allInternalEssays = internalEssays.sort((a, b) =>
