@@ -4,8 +4,8 @@ import { notFound } from 'next/navigation';
 
 import { cn } from '@/lib/utils';
 
-import styles from './styles.module.css';
 import { BackButton } from './back-button';
+import styles from './styles.module.css';
 
 export const generateStaticParams = async () =>
   allEssays.map((essay) => ({ slug: essay._raw.flattenedPath }));
@@ -72,7 +72,7 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
       />
       <time
         dateTime={essay.date}
-        className="text-sm font-semibold text-muted-foreground opacity-90 self-end mt-8"
+        className="mt-8 self-end text-sm font-semibold text-muted-foreground opacity-90"
       >
         {format(parseISO(essay.date), 'yyyy.MM.dd')}에 작성함
       </time>
