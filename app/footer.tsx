@@ -60,7 +60,7 @@ export function Footer() {
           </Link>
         </li>
         <li>
-          <Link href="https://x.com/hwangbyhwang" aria-label="X 주소">
+          <Link href="https://x.com/0xd669" aria-label="X 주소">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-3.5 w-3.5 fill-primary"
@@ -72,7 +72,7 @@ export function Footer() {
         </li>
         <li>
           <Link
-            href="https://github.com/sunghyunzz/index.html"
+            href="https://github.com/0xd669/index.html"
             aria-label="GitHub 주소"
           >
             <svg
@@ -87,7 +87,7 @@ export function Footer() {
         </li>
         <li>
           <Link
-            href="https://www.linkedin.com/in/sunghyunzz/"
+            href="https://www.linkedin.com/in/0xd669/"
             aria-label="LinkedIn 주소"
           >
             <svg
