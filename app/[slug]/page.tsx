@@ -1,10 +1,10 @@
 import { allEssays } from 'contentlayer/generated';
 import { format, parseISO } from 'date-fns';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { cn } from '@/lib/utils';
 
-import { BackButton } from './back-button';
 import styles from './styles.module.css';
 
 export const generateStaticParams = async () =>
@@ -62,7 +62,13 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
     <article className="flex flex-col gap-8">
       <header>
         <div className="flex items-center gap-8">
-          <BackButton />
+          <Link
+            href="/"
+            className="text-2xl font-medium no-underline hover:text-destructive"
+            aria-label="뒤로 가기"
+          >
+            ←
+          </Link>
           <h1 className="text-3xl font-bold">{essay.title}</h1>
         </div>
       </header>
