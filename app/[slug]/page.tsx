@@ -1,8 +1,8 @@
-import { allEssays } from 'contentlayer/generated';
 import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { allEssays } from '@/lib/essay';
 import { cn } from '@/lib/utils';
 
 import styles from './styles.module.css';
