@@ -29,7 +29,7 @@ date: 2024-02-01
 그렇게 생각하니 문득 〈더 퍼스트 슬램덩크〉의 정우성이 생각났다.
 명실상부한 고교농구의 일인자 정우성은 전국대회 시작 전에 신사에 들러 이렇게 말하며 소원을 빈다.
 
-![최종 성적 97점](/attachments/an-essential-experience/the-first-slam-dunk.webp)
+![더 퍼스트 슬램덩크에서 소원을 비는 정우성](/attachments/an-essential-experience/the-first-slam-dunk.webp)
 
 > "고등학교 농구에서 할 수 있는 건 다 했습니다. 제가 증명할 건 더 이상 없습니다. 저한테 필요한 경험을 주십시오. 아직 제가 못 한 게 있다면. 그 경험을 제게 주십시오."
 

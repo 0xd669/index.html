@@ -80,7 +80,7 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
         dateTime={essay.date}
         className="mt-8 self-end text-sm font-semibold text-muted-foreground opacity-90"
       >
-        {format(parseISO(essay.date), 'yyyy.MM.dd')}에 작성함
+        {format(parseISO(essay.date), 'yyyy년 M월 d일')}에 작성함
       </time>
     </article>
   );
