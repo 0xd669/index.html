@@ -45,7 +45,7 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
       title: essay.title,
       description: essay.description,
       siteId: '1723298788872499200',
-      creator: '@hwangbyhwang',
+      creator: '@0xd669',
       creatorId: '1723298788872499200',
       images: [`https://hwang.sh${essay.coverImageUrl}`],
     },
