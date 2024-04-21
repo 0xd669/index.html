@@ -1,8 +1,8 @@
-import { allEssays } from 'contentlayer/generated';
 import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { allEssays } from '@/lib/essay';
 import { cn } from '@/lib/utils';
 
 import styles from './styles.module.css';
@@ -45,7 +45,7 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
       title: essay.title,
       description: essay.description,
       siteId: '1723298788872499200',
-      creator: '@hwangbyhwang',
+      creator: '@0xd669',
       creatorId: '1723298788872499200',
       images: [`https://hwang.sh${essay.coverImageUrl}`],
     },
@@ -80,7 +80,7 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
         dateTime={essay.date}
         className="mt-8 self-end text-sm font-semibold text-muted-foreground opacity-90"
       >
-        {format(parseISO(essay.date), 'yyyy.MM.dd')}에 작성함
+        {format(parseISO(essay.date), 'yyyy년 M월 d일')}에 작성함
       </time>
     </article>
   );

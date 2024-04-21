@@ -1,4 +1,4 @@
-import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import { defineDocumentType, makeSource } from '@contentlayer2/source-files';
 import remarkGfm from 'remark-gfm';
 
 export const Essay = defineDocumentType(() => ({
@@ -21,7 +21,8 @@ export const Essay = defineDocumentType(() => ({
       type: 'string',
       resolve: (essay) =>
         essay.body.raw
-          .replaceAll(/[^ㄱ-힣\s\w-._!*"']+/g, '')
+          .replaceAll(/!\[.+\]\(.+\)/g, '')
+          .replaceAll(/\[(.+)\]\(.+\)/g, '$1')
           .replaceAll('\n', ' ')
           .slice(0, 160)
           .trim() + '...',
