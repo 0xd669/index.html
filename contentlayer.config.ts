@@ -21,7 +21,8 @@ export const Essay = defineDocumentType(() => ({
       type: 'string',
       resolve: (essay) =>
         essay.body.raw
-          .replaceAll(/[^ㄱ-힣\s\w-._!*"']+/g, '')
+          .replaceAll(/!\[.+\]\(.+\)/g, '')
+          .replaceAll(/\[(.+)\]\(.+\)/g, '$1')
           .replaceAll('\n', ' ')
           .slice(0, 160)
           .trim() + '...',
