@@ -25,5 +25,5 @@ date: 2024-04-21
 
 > 대체로 공이란 이루기는 힘들고, 실패하기는 쉬우며 때란 얻기는 어렵고 잃기는 쉽습니다. 때는 다시 오지 않습니다. —사마천, 『사기 열전』
 
-[^1]: Product Market Fit의 한국어 번역을 써보았다. PMF에 관한 건 [Lenny's Letter의 글](https://www.lennysnewsletter.com/p/what-it-feels-like-when-youve-found)을 참고하면 좋다.
+[^1]: Product Market Fit(PMF)의 한국어 번역어을 써보았다. PMF에 관한 건 [Lenny's Letter의 글](https://www.lennysnewsletter.com/p/what-it-feels-like-when-youve-found)을 참고하면 좋다.
 [^2]: [이승기의 아침 루틴 유튜브 동영상](https://youtu.be/fyICMatL2ng?si=hgl_vaP-9yemRlqp&t=115)
