@@ -17,7 +17,12 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <div className="mx-auto max-w-3xl px-8 py-12">
             {children}
             <aside className="fixed bottom-8 right-8 z-50">

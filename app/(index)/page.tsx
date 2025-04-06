@@ -3,14 +3,14 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: '👋',
-  description: '안녕하세요, 글 쓰는 황성현입니다. 반갑습니다.',
+  description: '안녕하세요, 황성현입니다. 반갑습니다.',
   metadataBase: new URL('https://hwang.sh'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'hwang.sh',
-    description: '안녕하세요, 글 쓰는 황성현입니다. 반갑습니다.',
+    description: '안녕하세요, 황성현입니다. 반갑습니다.',
     url: 'https://hwang.sh',
     locale: 'ko_KR',
     type: 'profile',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'hwang.sh',
-    description: '안녕하세요, 글 쓰는 황성현입니다. 반갑습니다.',
+    description: '안녕하세요, 황성현입니다. 반갑습니다.',
     siteId: '1723298788872499200',
     creator: '@hwangbyhwang',
     creatorId: '1723298788872499200',
@@ -39,21 +39,32 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <article className="space-y-8 pt-8 text-lg xl:text-xl">
-      <p className="leading-normal">
+    <main>
+      <p className="mt-8 text-lg leading-normal xl:text-xl">
         안녕하세요, 황성현입니다. 반갑습니다. 저는{' '}
         <Link href="https://corp.banksalad.com/">뱅크샐러드</Link>의
         공동창업자로서 초기에는 CTO로 일했습니다. 그 이전에는{' '}
         <Link href="https://orderplus.kr/teamxbarx">엑스바엑스</Link>의
-        공동창업자이자 CTO로 일했습니다. 일의 경계가 아닌 문제 해결 자체에
-        집중할 수 있는 풀스택 개발을 선호합니다. 현재는 뱅크샐러드에서 제품 팀
-        하나를 이끌고 있습니다.
+        공동창업자이자 CTO로 일했습니다. 주도적으로 무언가를 만들고, 가치를
+        전달하는 일을 좋아합니다. 현재는{' '}
+        <Link href="https://theventures.vc/">더벤처스</Link>에서 EIR이자
+        테크리드로서 AI 심사역을 만들고 있습니다. 일하며 드는 생각을 종종{' '}
+        <Link href="https://0xd669.substack.com/">Substack</Link>에 글로
+        옮깁니다. <Link href="https://x.com/0xd669">Twitter</Link>,{' '}
+        <Link href="https://github.com/0xd669">GitHub</Link>,{' '}
+        <Link href="https://www.linkedin.com/in/0xd669/">LinkedIn</Link>도 하고
+        있어요.
       </p>
-      <p className="leading-normal">
-        이곳은 저의 사적인 글과 업무적인 글이 한데 섞인 저의 공간입니다. 부족한
-        제 글을 모아둔 이곳에서 여러분이 쓸모를 찾으신다면 제게는 큰 보람일
-        겁니다.
-      </p>
-    </article>
+      <div className="mt-16">
+        <iframe
+          src="https://0xd669.substack.com/embed"
+          className="mx-auto rounded-xl border shadow-md"
+          width="480"
+          height="320"
+          frameBorder="0"
+          scrolling="no"
+        />
+      </div>
+    </main>
   );
 }
