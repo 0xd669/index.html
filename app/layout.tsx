@@ -1,13 +1,37 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import localFont from 'next/font/local';
 import { ReactNode } from 'react';
+
+import { ThemeProvider } from '@/components/theme-provider';
 
 import { Footer } from './footer';
 import './globals.css';
-import { ThemeProvider, ThemeToggleButton } from './theme-provider';
 
 export const runtime = 'edge';
+
+const pretendard = localFont({
+  src: './Pretendard Variable.woff2',
+  display: 'swap',
+  weight: '45 920',
+  variable: '--font-pretendard',
+  fallback: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'system-ui',
+    'Roboto',
+    'Helvetica Neue',
+    'Segoe UI',
+    'Apple SD Gothic Neo',
+    'Noto Sans KR',
+    'Malgun Gothic',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'sans-serif',
+  ],
+});
 
 export default function RootLayout({
   children,
@@ -15,7 +39,11 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="ko" suppressHydrationWarning>
+    <html
+      lang="ko"
+      className={`${pretendard.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         <ThemeProvider
           attribute="class"
@@ -23,11 +51,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="mx-auto max-w-3xl px-8 py-12">
+          <div className="mx-auto flex min-h-dvh max-w-3xl flex-col justify-between p-8">
             {children}
-            <aside className="fixed bottom-8 right-8 z-50">
-              <ThemeToggleButton />
-            </aside>
             <Footer />
           </div>
         </ThemeProvider>

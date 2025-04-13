@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: 'profile',
     firstName: '성현',
     lastName: '황',
-    username: 'sunghyunhwang',
+    username: '0xd669',
     gender: 'male',
     images: [
       {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'hwang.sh',
     description: '안녕하세요, 황성현입니다. 반갑습니다.',
     siteId: '1723298788872499200',
-    creator: '@hwangbyhwang',
+    creator: '@0xd669',
     creatorId: '1723298788872499200',
     images: [`https://hwang.sh/og.png`],
   },
@@ -55,16 +55,6 @@ export default function Home() {
         <Link href="https://www.linkedin.com/in/0xd669/">LinkedIn</Link>도 하고
         있어요.
       </p>
-      <div className="mt-16">
-        <iframe
-          src="https://0xd669.substack.com/embed"
-          className="mx-auto rounded-xl border shadow-md"
-          width="480"
-          height="320"
-          frameBorder="0"
-          scrolling="no"
-        />
-      </div>
     </main>
   );
 }
