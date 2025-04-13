@@ -5,6 +5,7 @@
 
 @theme inline {
   --font-sans: var(--font-pretendard);
+  --font-title: var(--font-passion-one);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -115,11 +116,14 @@
   * {
     @apply border-border outline-ring/50;
   }
+  ::selection {
+    @apply bg-amber-200 text-amber-700;
+  }
   body {
     @apply bg-background text-foreground antialiased;
   }
   a {
-    @apply text-primary underline underline-offset-2;
+    @apply text-primary underline underline-offset-3;
   }
   h1,
   h2,

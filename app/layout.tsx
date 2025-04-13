@@ -1,6 +1,7 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Passion_One } from 'next/font/google';
 import localFont from 'next/font/local';
 import { ReactNode } from 'react';
 
@@ -10,6 +11,13 @@ import { Footer } from './footer';
 import './globals.css';
 
 export const runtime = 'edge';
+
+const titleFont = Passion_One({
+  weight: '700',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-passion-one',
+});
 
 const pretendard = localFont({
   src: './Pretendard Variable.woff2',
@@ -41,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="ko"
-      className={`${pretendard.variable}`}
+      className={`${pretendard.variable} ${titleFont.variable}`}
       suppressHydrationWarning
     >
       <body>
@@ -51,7 +59,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="mx-auto flex min-h-dvh max-w-3xl flex-col justify-between p-8">
+          <div className="mx-auto flex min-h-dvh flex-col justify-between p-8">
             {children}
             <Footer />
           </div>
