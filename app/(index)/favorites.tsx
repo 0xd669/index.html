@@ -26,7 +26,13 @@ export function Favorites() {
       </article>
       <Button
         variant="ghost"
-        onClick={() => setDiceNumber(Math.floor(Math.random() * texts.length))}
+        onClick={() => {
+          let newDiceNumber = Math.floor(Math.random() * texts.length);
+          while (newDiceNumber === diceNumber) {
+            newDiceNumber = Math.floor(Math.random() * texts.length);
+          }
+          setDiceNumber(newDiceNumber);
+        }}
         size="icon"
         className="self-end"
       >
