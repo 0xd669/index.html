@@ -11,9 +11,14 @@ const prevBlogSlugs = [
   'working-remote-is-hard',
 ];
 
-export default function BlogPage({ params }: { params: { slug: string } }) {
-  if (prevBlogSlugs.includes(params.slug)) {
-    permanentRedirect(`https://0xd669.substack.com/p/${params.slug}`);
+export default async function BlogPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  if (prevBlogSlugs.includes(slug)) {
+    permanentRedirect(`https://0xd669.substack.com/p/${slug}`);
   }
 
   notFound();
