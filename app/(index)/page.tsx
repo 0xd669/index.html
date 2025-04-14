@@ -127,7 +127,7 @@ export default function Home() {
                   <Link href="https://0xd669.substack.com/">
                     황성현의 벽난로
                   </Link>{' '}
-                  뉴스레터 및 팟캐스트
+                  뉴스레터 및 팟캐스트(준비 중)
                 </span>
               </li>
               <li className="grid grid-cols-4">
