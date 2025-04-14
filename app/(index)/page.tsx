@@ -1,3 +1,4 @@
+import { EllipsisVertical } from 'lucide-react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -118,10 +119,40 @@ export default function Home() {
             <DialogHeader>
               <DialogTitle>Projects</DialogTitle>
             </DialogHeader>
-            <DialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </DialogDescription>
+            <ol className="text-muted-foreground space-y-3 text-base leading-relaxed">
+              <li className="grid grid-cols-4">
+                <span className="text-primary col-span-1 font-semibold">
+                  2025
+                </span>
+                <span className="col-span-3">
+                  <Link href="https://0xd669.substack.com/">
+                    황성현의 벽난로
+                  </Link>{' '}
+                  뉴스레터 및 팟캐스트
+                </span>
+              </li>
+              <li className="grid grid-cols-4">
+                <span className="text-primary col-span-1 font-semibold">
+                  2021
+                </span>
+                <span className="col-span-3">
+                  존 듀이,{' '}
+                  <Link href="https://www.gutenberg.org/ebooks/51525">
+                    「다윈이 철학에 미친 영향」
+                  </Link>{' '}
+                  번역 (
+                  <Link href="https://www.instagram.com/p/CMbeyVSJixs/">
+                    전기가오리
+                  </Link>
+                  )
+                </span>
+              </li>
+            </ol>
+            <EllipsisVertical className="text-muted-foreground mx-auto my-3 size-4" />
+            <p className="text-muted-foreground leading-relaxed">
+              현생을 핑계로 업무 외적으로 그다지 생산적이지 못했네요. 앞으로는
+              좀 더 재미나게 살아봐야겠습니다.
+            </p>
           </DialogContent>
         </Dialog>
         <Link href="https://0xd669.substack.com">
