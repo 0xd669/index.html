@@ -12,6 +12,8 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 
+import { Favorites } from './favorites';
+
 export const metadata: Metadata = {
   title: '👋',
   description: '안녕하세요, 황성현입니다. 반갑습니다.',
@@ -99,10 +101,7 @@ export default function Home() {
             <DialogHeader>
               <DialogTitle>Favorites</DialogTitle>
             </DialogHeader>
-            <DialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </DialogDescription>
+            <Favorites />
           </DialogContent>
         </Dialog>
         <Dialog>
