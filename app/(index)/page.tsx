@@ -41,10 +41,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <h1 className="font-title mt-6 text-center text-5xl font-bold tracking-tight">
-        100% Brewed by Hwang
-      </h1>
-      <section className="my-6 flex flex-1 flex-wrap items-center justify-center gap-4">
+      <section className="flex flex-1 flex-wrap items-center justify-center gap-4">
         <Image
           src="/careers.png"
           alt="Careers"

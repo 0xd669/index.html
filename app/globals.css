@@ -5,7 +5,6 @@
 
 @theme inline {
   --font-sans: var(--font-pretendard);
-  --font-title: var(--font-passion-one);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
