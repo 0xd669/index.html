@@ -8,8 +8,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Footer } from "./footer";
 import "./globals.css";
 
-export const runtime = "edge";
-
 const pretendard = localFont({
 	src: "./Pretendard Variable.woff2",
 	display: "swap",

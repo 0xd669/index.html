@@ -1,0 +1,56 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"trailingSlash": false,
+	"redirects": [
+		{
+			"source": "/rss.xml",
+			"destination": "https://0xd669.substack.com/feed",
+			"permanent": true
+		},
+		{
+			"source": "/always-startup",
+			"destination": "https://0xd669.substack.com/p/always-startup",
+			"permanent": true
+		},
+		{
+			"source": "/an-essential-experience",
+			"destination": "https://0xd669.substack.com/p/an-essential-experience",
+			"permanent": true
+		},
+		{
+			"source": "/grounded",
+			"destination": "https://0xd669.substack.com/p/grounded",
+			"permanent": true
+		},
+		{
+			"source": "/motivation-behind-the-startup",
+			"destination": "https://0xd669.substack.com/p/motivation-behind-the-startup",
+			"permanent": true
+		},
+		{
+			"source": "/startup-vs-giants",
+			"destination": "https://0xd669.substack.com/p/startup-vs-giants",
+			"permanent": true
+		},
+		{
+			"source": "/the-mindset-for-early-stage-founders",
+			"destination": "https://0xd669.substack.com/p/the-mindset-for-early-stage-founders",
+			"permanent": true
+		},
+		{
+			"source": "/when-either-a-or-b-fails",
+			"destination": "https://0xd669.substack.com/p/when-either-a-or-b-fails",
+			"permanent": true
+		},
+		{
+			"source": "/%EA%B2%B0%EA%B5%AD\\+%EB%8B%A4\\+%EC%97%AD%EB%9F%89%EC%9D%98\\+%EB%AC%B8%EC%A0%9C",
+			"destination": "https://0xd669.substack.com/p/when-either-a-or-b-fails",
+			"permanent": true
+		},
+		{
+			"source": "/working-remote-is-hard",
+			"destination": "https://0xd669.substack.com/p/working-remote-is-hard",
+			"permanent": true
+		}
+	]
+}
